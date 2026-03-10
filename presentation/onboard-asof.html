@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onboard ASOF</title>
+    <link rel="stylesheet" href="./onboard-asof.css" />
+  </head>
+  <body>
+    <svg aria-hidden="true" class="icon-sprite" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="i-users" viewBox="0 0 24 24">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+        <circle cx="9" cy="7" r="4"></circle>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+      </symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24">
+        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+        <polyline points="2 17 12 22 22 17"></polyline>
+        <polyline points="2 12 12 17 22 12"></polyline>
+      </symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24">
+        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <polyline points="9 11 12 14 22 4"></polyline>
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+      </symbol>
+    </svg>
+
+    <header class="deck-toolbar" aria-label="Controles da apresentação">
+      <div class="toolbar-brand">ASOF</div>
+      <div class="toolbar-actions">
+        <button type="button" data-action="prev">Anterior</button>
+        <button type="button" data-action="next">Próximo</button>
+        <button type="button" data-action="print">Exportar PDF</button>
+      </div>
+      <div class="toolbar-progress">
+        <span id="current-slide">01</span>
+        <span>/</span>
+        <span id="total-slides">16</span>
+      </div>
+    </header>
+
+    <main class="deck" id="deck">
+      <section class="slide slide-dark slide-cover" data-title="Capa">
+        <div class="eyebrow">ONBOARD ASOF</div>
+        <div class="cover-grid">
+          <div class="cover-copy">
+            <h1>A associação criada pela carreira para representar, apoiar e conectar Oficiais de Chancelaria.</h1>
+            <p class="cover-subtitle">Origem, missão, convênios, cadastro e contribuição associativa</p>
+            <div class="fact-line">1990 • 26 participantes • votação 24 x 2</div>
+          </div>
+          <aside class="cover-panel">
+            <div class="cover-year">1990</div>
+            <h2>Fundação aprovada por 24 votos a 2</h2>
+            <p>26 Oficiais de Chancelaria, reunidos em Brasília, decidiram criar uma entidade própria e independente.</p>
+            <div class="panel-kicker">Mensagem central</div>
+            <p class="panel-claim">Representação institucional com apoio prático ao associado.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="slide slide-light" data-title="Origem">
+        <div class="slide-head">
+          <div class="eyebrow">Origem</div>
+          <h2>A ASOF nasce de uma decisão coletiva da carreira</h2>
+          <p>Em 7 de agosto de 1990, Oficiais de Chancelaria se reuniram em Brasília e deliberaram pela criação de uma associação própria.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-line"></div>
+          <div class="timeline-node">
+            <strong>7 ago 1990</strong>
+            <span>reunião inicial</span>
+          </div>
+          <div class="timeline-node">
+            <strong>26</strong>
+            <span>participantes</span>
+          </div>
+          <div class="timeline-node">
+            <strong>24 x 2</strong>
+            <span>votação</span>
+          </div>
+          <div class="timeline-node">
+            <strong>ASOF</strong>
+            <span>fundação imediata</span>
+          </div>
+        </div>
+        <div class="callout-card">
+          <div class="icon-badge"><svg><use href="#i-users"></use></svg></div>
+          <div>
+            <h3>Brasília, ASMRE, 18h</h3>
+            <p>O debate considerou manter apenas um núcleo em outra entidade, mas prevaleceu a necessidade de representação própria.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide-light alt-split" data-title="Autonomia">
+        <div class="slide-head">
+          <div class="eyebrow">Escolha central</div>
+          <h2>A autonomia institucional foi a opção que definiu a associação</h2>
+        </div>
+        <div class="split-grid">
+          <article class="panel panel-soft">
+            <div class="panel-label">Alternativa considerada</div>
+            <h3>Manter um núcleo da carreira dentro de estrutura já existente</h3>
+            <p>Preservaria apoio inicial, mas não resolveria a necessidade de identidade institucional própria.</p>
+          </article>
+          <article class="panel panel-strong">
+            <div class="panel-label">Opção aprovada</div>
+            <h3>Criar uma associação exclusiva da categoria</h3>
+            <p>Com foco integral nos interesses dos Oficiais de Chancelaria, personalidade jurídica própria e continuidade institucional.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="slide slide-light slide-manifesto" data-title="Missão">
+        <div class="slide-head">
+          <div class="eyebrow">Missão</div>
+          <h2>O estatuto transforma a fundação em compromisso permanente</h2>
+          <p>O estatuto consolida a ASOF como entidade civil sem fins lucrativos voltada à união, à representação e ao apoio prático aos Oficiais de Chancelaria.</p>
+        </div>
+        <div class="manifesto-list">
+          <article><span>01</span><h3>União da carreira</h3></article>
+          <article><span>02</span><h3>Representação institucional</h3></article>
+          <article><span>03</span><h3>Aprimoramento profissional</h3></article>
+          <article><span>04</span><h3>Benefícios e convênios</h3></article>
+        </div>
+      </section>
+
+      <section class="slide slide-light slide-sequence" data-title="Valor">
+        <div class="slide-head">
+          <div class="eyebrow">Entrega de valor</div>
+          <h2>O valor da ASOF combina representação, organização e apoio ao associado</h2>
+        </div>
+        <div class="sequence-list">
+          <article>
+            <span>1</span>
+            <h3>Representar</h3>
+            <p>Leva demandas da carreira a autoridades e instituições.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>Organizar</h3>
+            <p>Mantém base cadastral, regras e vínculo associativo.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>Conectar</h3>
+            <p>Articula convênios e benefícios em várias frentes.</p>
+          </article>
+          <article>
+            <span>4</span>
+            <h3>Apoiar</h3>
+            <p>Transforma a associação em suporte contínuo ao associado.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="slide slide-dark" data-title="Convênios">
+        <div class="slide-head">
+          <div class="eyebrow">Benefícios</div>
+          <h2>Convênios geram valor quando o associado consegue decidir rápido</h2>
+          <p>Em vez de apresentar dezenas de opções de uma vez, o onboard deve começar pelos benefícios mais relevantes em cada categoria e deixar o catálogo completo como apoio.</p>
+        </div>
+        <div class="metric-band">
+          <article><strong>Educação</strong><span>mostrar 3 ou 4 destaques primeiro</span></article>
+          <article><strong>Saúde</strong><span>priorizar uso imediato e economia clara</span></article>
+          <article><strong>Lazer</strong><span>recomendar opções por perfil do associado</span></article>
+          <article><strong>Serviços</strong><span>deixar o restante no apêndice</span></article>
+        </div>
+        <aside class="inline-quote">
+          <div class="panel-kicker">Fadiga de decisão</div>
+          <p>Quando tudo aparece ao mesmo tempo, a chance de não escolher nada aumenta.</p>
+        </aside>
+      </section>
+
+      <section class="slide slide-light" data-title="Funcionamento">
+        <div class="slide-head">
+          <div class="eyebrow">Funcionamento</div>
+          <h2>O melhor onboard recomenda caminhos, em vez de exigir busca manual</h2>
+          <p>A ASOF pode apresentar convênios por contexto de uso, mostrando primeiro o que tende a ser mais útil para cada perfil de associado.</p>
+        </div>
+        <div class="flow-grid">
+          <article class="flow-box">Perfil do associado</article>
+          <article class="flow-box">Sugestão inicial da ASOF</article>
+          <article class="flow-box">Catálogo completo como apoio</article>
+        </div>
+        <div class="flow-notes">
+          <span>menos esforço para decidir</span>
+          <span>mais chance de ativação do benefício</span>
+        </div>
+      </section>
+
+      <section class="slide slide-light" data-title="Cadastro">
+        <div class="slide-head">
+          <div class="eyebrow">Cadastro</div>
+          <h2>O cadastro precisa reduzir atrito para vencer o viés do status quo</h2>
+          <p>Quanto mais simples, previsível e pré-configurado for o processo, menor a chance de o associado adiar o envio do formulário.</p>
+        </div>
+        <div class="steps-row">
+          <article><span>1</span><h3>Mostrar só o essencial primeiro</h3></article>
+          <article><span>2</span><h3>Usar padrões e opções pré-selecionadas</h3></article>
+          <article><span>3</span><h3>Concluir sem etapas desnecessárias</h3></article>
+        </div>
+        <div class="info-card">
+          <div class="icon-badge"><svg><use href="#i-check"></use></svg></div>
+          <div>
+            <h3>Princípio de desenho</h3>
+            <p>menos campos visíveis no início • defaults sensatos • comunicação preferencial já marcada • envio com mínimo esforço</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide slide-light slide-price-editorial" data-title="Contribuição">
+        <div class="slide-head">
+          <div class="eyebrow">Sustentação</div>
+          <h2>O valor da contribuição fica mais forte quando o custo parece leve e o retorno parece concreto</h2>
+          <p>A comunicação deve enquadrar a mensalidade como investimento pequeno diante da representação e da economia gerada por benefícios já acessíveis.</p>
+        </div>
+        <div class="price-grid">
+          <article><h3>Ativo</h3><strong>R$ 40,00</strong></article>
+          <article><h3>Aposentado</h3><strong>R$ 20,00</strong></article>
+          <article><h3>Exterior</h3><strong>US$ 25,00</strong></article>
+        </div>
+        <div class="tag-row">
+          <span>desconto automático reduz fricção</span>
+          <span>evitar cobrança manual recorrente</span>
+          <span>mostrar economia antes do preço</span>
+          <span>ancorar valor no benefício percebido</span>
+        </div>
+      </section>
+
+      <section class="slide slide-dark slide-closing-editorial" data-title="Fechamento">
+        <div class="slide-head">
+          <div class="eyebrow">Fechamento</div>
+          <h2>Entrar agora evita deixar representação e benefícios para depois</h2>
+          <p>A adesão ganha força quando o associado entende não só o que recebe, mas também o que continua deixando de acessar enquanto adia a entrada.</p>
+        </div>
+        <div class="closing-grid">
+          <article>Ativar acesso à rede de benefícios</article>
+          <article>Entrar na representação institucional da carreira</article>
+          <article>Reduzir a chance de adiar uma decisão útil</article>
+        </div>
+        <div class="closing-badge">Associe-se agora e não deixe benefícios e representação na mesa</div>
+      </section>
+
+      <section class="slide slide-dark slide-section slide-appendix-intro" data-title="Apêndice">
+        <div class="eyebrow">Apêndice</div>
+        <h2>Lista completa dos convênios</h2>
+        <p>Os slides a seguir organizam os parceiros por categoria, com foco em consulta rápida e apoio ao onboard.</p>
+      </section>
+
+      <section class="slide slide-light slide-catalog slide-appendix" data-title="Educação">
+        <div class="slide-head">
+          <div class="eyebrow">Apêndice</div>
+          <h2>Convênios de educação</h2>
+        </div>
+        <div class="catalog-grid three">
+          <article class="catalog-card">
+            <h3>Educação 1</h3>
+            <ul>
+              <li>Aliança Francesa</li><li>CCAA</li><li>CIMAN</li><li>Colégio Dinatos COC</li><li>Cultura Inglesa</li><li>Curso Ignis</li><li>Escola Franciscana Fátima</li><li>Escola Presbiteriana Mackenzie</li><li>FACITEC</li>
+            </ul>
+          </article>
+          <article class="catalog-card">
+            <h3>Educação 2</h3>
+            <ul>
+              <li>FGV</li><li>Gran Cursos</li><li>IBMEC</li><li>IDP</li><li>IESB</li><li>Instituto Blaise Pascal</li><li>Laboro</li><li>MS Educação</li><li>Positive Idiomas</li>
+            </ul>
+          </article>
+          <article class="catalog-card">
+            <h3>Educação 3</h3>
+            <ul>
+              <li>Rede de Ensino JK</li><li>St. Giles</li><li>Studio On-line</li><li>Swiss International School</li><li>Thomas Jefferson</li><li>UDF</li><li>UniCEUB</li><li>UNIP</li><li>Wizard</li>
+            </ul>
+          </article>
+        </div>
+        <div class="tag-row">
+          <span>Centro Educacional Maria Auxiliadora</span>
+          <span>UNYLEYA</span>
+          <span>Instituto Formação para a Educação</span>
+          <span>3W Educacional Editora e Cursos</span>
+        </div>
+      </section>
+
+      <section class="slide slide-light slide-catalog slide-appendix" data-title="Saúde 1">
+        <div class="slide-head">
+          <div class="eyebrow">Apêndice</div>
+          <h2>Convênios de saúde</h2>
+        </div>
+        <div class="catalog-grid two">
+          <article class="catalog-card">
+            <h3>Saúde 1</h3>
+            <ul>
+              <li>Aquafisio Hidroterapia Esportiva</li><li>Bonvena Medicina Reprodutiva</li><li>CBV</li><li>CDI Centro Diagnóstico por Imagem</li><li>Centro de Medicina Nuclear da Guanabara</li><li>CIORB</li><li>Clínica Plenus Psicologia e Saúde Integrada</li><li>Dermatologic</li><li>EBM-Odonto</li><li>Endogastrus</li><li>Home Hospital Ortopédico e Medicina Especializada</li>
+            </ul>
+          </article>
+          <article class="catalog-card">
+            <h3>Saúde 2</h3>
+            <ul>
+              <li>Implantocard</li><li>Juliana Cristina Paim Psicóloga Clínica e Neuropsicóloga</li><li>Laboratório Citoprev</li><li>Mei Li Acupuntura</li><li>Oculare Oftalmologia</li><li>Odontobrasília</li><li>Odontoempresa</li><li>Ressonance</li><li>Rita Trindade</li><li>RM Clínica Médica e Estética</li><li>Sabin</li><li>Souli Psicologia e Psicopedagogia</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="slide slide-light slide-catalog slide-appendix" data-title="Saúde complementar">
+        <div class="slide-head">
+          <div class="eyebrow">Apêndice</div>
+          <h2>Convênios de saúde complementar</h2>
+        </div>
+        <div class="split-grid">
+          <article class="panel panel-strong">
+            <div class="panel-label">Complementares</div>
+            <h3>Subpastas e documentação adicional</h3>
+            <ul class="plain-list">
+              <li>Microsom</li>
+              <li>Oftalmocenter</li>
+              <li>Implantomed</li>
+              <li>Instituto Oftalmológico Visão</li>
+              <li>Olhar Hospital Oftalmológico Ltda.</li>
+            </ul>
+          </article>
+          <article class="panel panel-soft">
+            <div class="panel-label">Leitura editorial</div>
+            <h3>A frente de saúde é a mais densa do acervo</h3>
+            <p>Cobre diagnósticos, clínicas, odontologia, psicologia, oftalmologia e serviços terapêuticos.</p>
+            <p>Na apresentação ao vivo, vale citar poucos exemplos e usar este slide como apoio de consulta, não como leitura integral.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="slide slide-light slide-catalog slide-appendix" data-title="Lazer">
+        <div class="slide-head">
+          <div class="eyebrow">Apêndice</div>
+          <h2>Convênios de lazer e bem-estar</h2>
+        </div>
+        <div class="catalog-grid two">
+          <article class="catalog-card">
+            <h3>Lazer e bem-estar 1</h3>
+            <ul>
+              <li>Academia Club 22</li><li>Academia Companhia Athletica</li><li>Academia Dom Bosco</li><li>Academia Runway</li><li>Academia Team Nogueira</li><li>Academia Vasco Neto</li><li>ASBAC</li><li>Associação Cristã de Moços</li><li>ATP Atividades Físicas</li><li>Bancorbrás Consórcios</li><li>Bancorbrás Turismo</li><li>Bay Park Resort Hotel</li>
+            </ul>
+          </article>
+          <article class="catalog-card">
+            <h3>Lazer e bem-estar 2</h3>
+            <ul>
+              <li>Camisaria Nyll</li><li>Clube dos Previdenciários</li><li>Corpus Studio de Pilates</li><li>Elia Spa</li><li>Equilibriom Estética e Podologia</li><li>Escola Ballet Garden</li><li>GrandBittar Hotel</li><li>Hotel Fazenda Mestre Darmas</li><li>Montreal Turismo</li><li>Nuwa Spa</li><li>Studio Caracóis</li><li>Studio Hair 180 Graus</li><li>Thermas do Rio Quente</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="slide slide-light slide-catalog slide-appendix slide-services-reference" data-title="Serviços">
+        <div class="slide-head">
+          <div class="eyebrow">Apêndice</div>
+          <h2>Convênios de serviços</h2>
+          <p>Parcerias ligadas ao apoio ao dia a dia do associado identificadas no acervo disponível.</p>
+        </div>
+        <div class="service-grid">
+          <article>Hertz</article>
+          <article>Lavanderia<br />Cleaners Club</article>
+          <article>Lavanderia<br />Selecta BonaSecco</article>
+          <article>Óptica Elen</article>
+          <article>Grupo Porcão</article>
+        </div>
+      </section>
+    </main>
+
+    <script src="./onboard-asof.js" defer></script>
+  </body>
+</html>

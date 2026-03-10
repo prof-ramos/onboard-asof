@@ -14,13 +14,29 @@ Material-base para apresentar a ASOF a associados atuais e potenciais associados
 ### Abrir a apresentação pronta
 
 - [onboard-asof.pptx](presentation/onboard-asof.pptx)
+- [onboard-asof-web.pdf](presentation/onboard-asof-web.pdf)
 
-### Regenerar a apresentação
+### Regenerar as saídas
+
+#### Saída `.pptx`
 
 ```bash
 uv venv .venv
 uv run --with python-pptx scripts/generate_presentation.py
 ```
+
+#### Saída web + PDF
+
+```bash
+uv run --with playwright python scripts/render_presentation_pdf.py
+```
+
+Arquivos gerados:
+
+- HTML: [presentation/onboard-asof.html](presentation/onboard-asof.html)
+- CSS: [presentation/onboard-asof.css](presentation/onboard-asof.css)
+- JS: [presentation/onboard-asof.js](presentation/onboard-asof.js)
+- PDF: [presentation/onboard-asof-web.pdf](presentation/onboard-asof-web.pdf)
 
 ## Objetivo
 
@@ -31,7 +47,9 @@ Este repositório consolida textos de apoio para um manual de apresentação da 
 - capítulos editoriais em Markdown sobre fundação, convênios, formulário e contribuição;
 - roteiro estruturado de apresentação em [apresentacao-onboard-asof.md](presentation/apresentacao-onboard-asof.md);
 - deck institucional em [onboard-asof.pptx](presentation/onboard-asof.pptx);
-- script reprodutível de geração em [generate_presentation.py](scripts/generate_presentation.py).
+- apresentação web em [onboard-asof.html](presentation/onboard-asof.html);
+- PDF derivado do HTML em [onboard-asof-web.pdf](presentation/onboard-asof-web.pdf);
+- scripts reprodutíveis de geração em [generate_presentation.py](scripts/generate_presentation.py) e [render_presentation_pdf.py](scripts/render_presentation_pdf.py).
 
 ## Capítulos disponíveis
 
@@ -47,8 +65,13 @@ Este repositório consolida textos de apoio para um manual de apresentação da 
 | `README.md` | Visão geral do projeto |
 | `docs/chapters/` | Capítulos editoriais do onboard |
 | `presentation/apresentacao-onboard-asof.md` | Estrutura narrativa do deck |
-| `presentation/onboard-asof.pptx` | Apresentação pronta para uso |
+| `presentation/onboard-asof.pptx` | Saída em PowerPoint |
+| `presentation/onboard-asof.html` | Versão web da apresentação |
+| `presentation/onboard-asof.css` | Estilos da versão web |
+| `presentation/onboard-asof.js` | Navegação da versão web |
+| `presentation/onboard-asof-web.pdf` | PDF gerado a partir do HTML |
 | `scripts/generate_presentation.py` | Geração automatizada do `.pptx` |
+| `scripts/render_presentation_pdf.py` | Geração automatizada do PDF a partir do HTML |
 
 ## Fontes utilizadas nesta etapa
 

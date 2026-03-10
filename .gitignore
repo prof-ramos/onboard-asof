@@ -4,3 +4,4 @@
 .omx/state/
 .venv/
 .pptx-preview/
+.DS_Store

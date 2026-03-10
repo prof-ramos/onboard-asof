@@ -92,16 +92,16 @@ A ASOF existe para representar os Oficiais de Chancelaria com autonomia instituc
 
 ### Slide 6
 
-**Título:** Convênios ampliam o valor da associação no dia a dia
+**Título:** Convênios geram valor quando o associado consegue decidir rápido
 
-**Mensagem-chave:** A política de convênios da ASOF transforma a atuação associativa em acesso a educação, saúde, bem-estar e serviços.
+**Mensagem-chave:** O onboard deve apresentar primeiro poucos convênios de maior relevância por categoria, deixando o catálogo completo como material de apoio.
 
-**Evidência visual sugerida:** Quatro blocos com categorias:
+**Evidência visual sugerida:** Quatro blocos com orientação de curadoria:
 
-- educação;
-- saúde;
-- lazer e bem-estar;
-- serviços.
+- educação: mostrar 3 ou 4 destaques;
+- saúde: priorizar economia clara e uso imediato;
+- lazer e bem-estar: recomendar por perfil;
+- serviços: deixar o restante no apêndice.
 
 **Dados de apoio:**
 
@@ -110,77 +110,76 @@ A ASOF existe para representar os Oficiais de Chancelaria com autonomia instituc
 - lazer e bem-estar: 25 arquivos principais;
 - serviços: 5 arquivos principais, além de subpasta específica.
 
-**Notas do apresentador:** Evite listar parceiros demais no slide. O foco aqui é mostrar amplitude e diversidade do benefício.
+**Notas do apresentador:** Use o princípio de combate à fadiga de decisão. O foco do slide não é provar quantidade, e sim facilitar a primeira escolha.
 
 ### Slide 7
 
-**Título:** Os convênios funcionam como rede de apoio ao associado
+**Título:** O melhor onboard recomenda caminhos, em vez de exigir busca manual
 
-**Mensagem-chave:** A ASOF articula o acesso aos benefícios, enquanto a execução do serviço permanece com a empresa conveniada.
+**Mensagem-chave:** A apresentação dos convênios deve partir do perfil do associado e sugerir caminhos iniciais antes de expor o catálogo completo.
 
-**Evidência visual sugerida:** Diagrama de relacionamento:
+**Evidência visual sugerida:** Fluxo em três etapas:
 
-- ASOF;
-- associado e dependentes;
-- convenente.
+- perfil do associado;
+- sugestão inicial da ASOF;
+- catálogo completo como apoio.
 
 **Pontos de apoio:**
 
-- acesso por declaração ou carteirinha;
-- divulgação pelos canais da ASOF;
-- sem repasse financeiro entre ASOF e convenente.
+- menos esforço para decidir;
+- mais chance de ativação real do benefício;
+- menor risco de paralisia diante de muitas opções.
 
-**Notas do apresentador:** Este slide ajuda a explicar o papel institucional da associação sem entrar em tecnicismo contratual.
+**Notas do apresentador:** O ponto aqui é design antecipatório: recomendar primeiro, listar depois.
 
 ### Slide 8
 
-**Título:** O vínculo associativo depende de cadastro claro e atualizado
+**Título:** O cadastro precisa reduzir atrito para vencer o viés do status quo
 
-**Mensagem-chave:** O formulário de atualização de dados organiza a relação entre associado e associação e sustenta a comunicação e a gestão cadastral.
+**Mensagem-chave:** Quanto mais simples, previsível e pré-configurado for o processo, menor a chance de o associado adiar a adesão.
 
-**Evidência visual sugerida:** Ilustração em etapas:
+**Evidência visual sugerida:** Três princípios de redução de atrito:
 
-1. preencher;
-2. assinar;
-3. remeter à ASOF.
+1. mostrar só o essencial primeiro;
+2. usar padrões e opções pré-selecionadas;
+3. concluir sem etapas desnecessárias.
 
 **Pontos de apoio:**
 
-- dados pessoais e funcionais;
-- contatos;
-- dependentes;
-- dados bancários;
-- autorização de desconto.
+- menos campos visíveis no início;
+- defaults sensatos;
+- preferência de comunicação já marcada;
+- envio com esforço mínimo.
 
-**Notas do apresentador:** Reforce que manter dados atualizados não é só burocracia; é condição para atendimento, comunicação e operação corretos.
+**Notas do apresentador:** Conectar o formulário ao comportamento humano: se o processo exige muito esforço, a tendência natural é adiar.
 
 ### Slide 9
 
-**Título:** A contribuição associativa sustenta a atuação da ASOF
+**Título:** O valor da contribuição fica mais forte quando o custo parece leve e o retorno parece concreto
 
-**Mensagem-chave:** A contribuição mensal é a base financeira que viabiliza a manutenção institucional da associação.
+**Mensagem-chave:** A contribuição deve ser enquadrada como investimento pequeno diante da representação e da economia potencial gerada pelos convênios.
 
-**Evidência visual sugerida:** Tabela simples com três linhas:
+**Evidência visual sugerida:** Tabela com os três valores atuais e uma linha de reforço sobre cobrança com menor fricção.
 
 - ativo: R$ 40,00;
 - aposentado: R$ 20,00;
 - exterior: US$ 25,00.
 
-**Notas do apresentador:** Explique a diferença entre plano estatutário e plano operacional: o estatuto prevê a contribuição, e o formulário mostra os valores praticados no documento atual.
+**Notas do apresentador:** Trazer dois vieses aqui: enquadramento do valor e redução da dor de pagar por meio de cobrança automática ou fluxo menos tangível.
 
 ### Slide 10
 
-**Título:** Associar-se é entrar em uma estrutura de representação e suporte
+**Título:** Entrar agora evita deixar representação e benefícios para depois
 
-**Mensagem-chave:** A ASOF conecta identidade profissional, representação coletiva e benefícios concretos em uma mesma estrutura associativa.
+**Mensagem-chave:** A decisão de adesão ganha força quando o associado entende não apenas o que recebe, mas também o que continua deixando de acessar enquanto adia sua entrada.
 
-**Evidência visual sugerida:** Slide de fechamento com três pilares:
+**Evidência visual sugerida:** Slide de fechamento com três efeitos imediatos da adesão:
 
-- representar a carreira;
-- fortalecer vínculos;
-- gerar apoio prático ao associado.
+- ativar acesso à rede de benefícios;
+- entrar na representação institucional da carreira;
+- reduzir a chance de adiar uma decisão útil.
 
-**Notas do apresentador:** Feche retomando a mensagem principal e reforçando que a associação nasce da carreira e continua existindo para servi-la.
+**Notas do apresentador:** Usar aversão à perda com sobriedade. O objetivo não é alarmar, e sim mostrar que adiar também tem custo.
 
 ## Versão curta de 5 slides
 
@@ -206,3 +205,4 @@ Se o tempo for reduzido, usar:
 - Não incluir dados pessoais de documentos-fonte.
 - Não transformar o deck em inventário completo de convênios.
 - Se a apresentação for pública, preferir categorias e exemplos selecionados, não listagens extensas.
+- Ao aplicar psicologia comportamental, preservar tom institucional e evitar linguagem manipulativa.
