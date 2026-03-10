@@ -6,6 +6,9 @@
 - [Convênios](./chapters/convenio.md)
 - [Formulário](./chapters/formulario.md)
 - [Valores](./chapters/valores.md)
+- [Material para participantes](./material-para-participantes.md)
+- [Material para participantes em HTML](./material-para-participantes.html)
+- [Material para participantes em PDF](./material-para-participantes.pdf)
 
 ## Apresentação
 

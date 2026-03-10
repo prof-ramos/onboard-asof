@@ -1,0 +1,289 @@
+:root {
+  --navy: #1e2a67;
+  --teal: #0f7d93;
+  --gold: #c7a74b;
+  --ink: #23263a;
+  --muted: #5c6177;
+  --paper: #f7f2e8;
+  --paper-deep: #efe7d8;
+  --line: rgba(30, 42, 103, 0.16);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: #ece7de;
+}
+
+.sheet {
+  width: min(210mm, 100%);
+  min-height: 297mm;
+  margin: 0 auto;
+  background: var(--paper);
+  padding: 16mm 16mm 18mm;
+  position: relative;
+}
+
+.sheet-topline {
+  height: 5mm;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--teal) 72%, var(--gold) 100%);
+  margin: -16mm -16mm 10mm;
+}
+
+.hero {
+  padding: 0 0 9mm;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.hero-kicker {
+  font-size: 0.86rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.9fr;
+  gap: 8mm;
+  align-items: start;
+}
+
+.eyebrow {
+  color: var(--teal);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+h1, h2, h3 {
+  font-family: "Iowan Old Style", Georgia, serif;
+  margin: 0;
+  line-height: 1;
+}
+
+h1 {
+  font-size: 2.4rem;
+  color: var(--navy);
+  margin-bottom: 0.8rem;
+}
+
+h2 {
+  font-size: 1.45rem;
+  color: var(--navy);
+  margin-bottom: 0.7rem;
+}
+
+h3 {
+  font-size: 1.02rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+p, li, td, th {
+  line-height: 1.48;
+  font-size: 0.98rem;
+}
+
+.lead {
+  max-width: 42rem;
+  color: var(--muted);
+  margin: 0 0 0.9rem;
+  font-size: 1.02rem;
+}
+
+.hero-stamp {
+  border-left: 2px solid var(--gold);
+  padding-left: 5mm;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.hero-stamp span {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.hero-stamp strong {
+  font-family: "Iowan Old Style", Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  color: var(--navy);
+}
+
+.section {
+  padding: 8mm 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 8mm;
+}
+
+.highlight,
+.steps {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  padding: 5mm 5mm 5.5mm;
+}
+
+.benefit-grid,
+.category-grid {
+  display: grid;
+  gap: 4mm;
+}
+
+.benefit-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.benefit-grid article,
+.category-grid article {
+  padding: 4mm;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+}
+
+.category-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.category-grid article {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.category-grid strong {
+  color: var(--navy);
+  font-family: "Iowan Old Style", Georgia, serif;
+  font-size: 1.05rem;
+}
+
+.category-grid span,
+.section-intro,
+.footnote {
+  color: var(--muted);
+}
+
+.callout-band {
+  background: var(--navy);
+  color: white;
+  padding: 0;
+}
+
+.callout-inner {
+  padding: 7mm 8mm;
+  border-left: 4px solid var(--gold);
+}
+
+.callout-band h2,
+.callout-band p {
+  color: white;
+}
+
+.plain {
+  padding-left: 1rem;
+  margin: 0.4rem 0 0;
+}
+
+.steps ol {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.6rem;
+  background: rgba(255, 255, 255, 0.56);
+}
+
+th, td {
+  text-align: left;
+  padding: 3.2mm 3mm;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  color: var(--navy);
+  background: rgba(30, 42, 103, 0.05);
+}
+
+.sheet-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 8mm;
+  padding-top: 4mm;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 900px) {
+  .sheet {
+    padding: 1.25rem;
+  }
+
+  .sheet-topline {
+    margin: -1.25rem -1.25rem 1.25rem;
+  }
+
+  .two-col,
+  .hero-grid,
+  .benefit-grid,
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-meta,
+  .sheet-footer {
+    flex-direction: column;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    background: white;
+  }
+
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
