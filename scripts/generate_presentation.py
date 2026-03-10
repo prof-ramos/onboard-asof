@@ -97,7 +97,7 @@ def add_title(slide, kicker, title, *, dark=False):
 
 def add_footer(slide, idx, total, dark=False):
     color = ICE if dark else MUTED
-    add_text(slide, f"{idx:02d} / {total:02d}", Inches(11.9), Inches(7.0), Inches(0.7), Inches(0.25),
+    add_text(slide, f"{idx:02d} / {total:02d}", Inches(11.82), Inches(6.72), Inches(0.78), Inches(0.25),
              size=10, color=color, align=PP_ALIGN.RIGHT)
 
 
@@ -112,12 +112,35 @@ def add_timeline_node(slide, left, top, label, sublabel, fill):
              size=11, color=MUTED, align=PP_ALIGN.CENTER)
 
 
+def add_section_slide(slide, section, title, subtitle):
+    set_bg(slide, NAVY)
+    add_text(slide, section.upper(), Inches(0.9), Inches(1.0), Inches(3.5), Inches(0.35),
+             size=14, color=GOLD, bold=True)
+    add_text(slide, title, Inches(0.9), Inches(1.6), Inches(7.5), Inches(1.0),
+             size=31, color=WHITE, bold=True, font_name="Aptos Display")
+    add_text(slide, subtitle, Inches(0.9), Inches(3.0), Inches(6.2), Inches(0.8),
+             size=18, color=ICE)
+    add_card(slide, Inches(8.8), Inches(1.2), Inches(2.8), Inches(4.6), TEAL)
+    add_text(slide, "Catálogo\ncompleto", Inches(9.15), Inches(2.0), Inches(2.1), Inches(0.9),
+             size=28, color=WHITE, bold=True, align=PP_ALIGN.CENTER, font_name="Aptos Display")
+    add_text(slide, "Listas por categoria para consulta rápida durante o onboard ou como anexo de apoio.", Inches(9.2), Inches(3.55),
+             Inches(2.0), Inches(1.4), size=14, color=WHITE, align=PP_ALIGN.CENTER)
+
+
+def add_list_panel(slide, title, items, left, top, width, height, *, fill=LIGHT, title_color=NAVY, text_color=INK):
+    add_card(slide, left, top, width, height, fill)
+    add_text(slide, title, left + Inches(0.22), top + Inches(0.22), width - Inches(0.44), Inches(0.28),
+             size=16, color=title_color, bold=True)
+    add_text(slide, "\n".join(items), left + Inches(0.22), top + Inches(0.62), width - Inches(0.44), height - Inches(0.84),
+             size=13, color=text_color)
+
+
 def build_deck():
     prs = Presentation()
     prs.slide_width = SLIDE_W
     prs.slide_height = SLIDE_H
     blank = prs.slide_layouts[6]
-    total = 14
+    total = 16
 
     # 1. Cover
     slide = prs.slides.add_slide(blank)
@@ -128,18 +151,20 @@ def build_deck():
              Inches(0.8), Inches(1.3), Inches(6.5), Inches(1.5),
              size=28, color=WHITE, bold=True, font_name="Aptos Display")
     add_text(slide, "Origem, missão, convênios, cadastro e contribuição associativa",
-             Inches(0.8), Inches(3.0), Inches(5.0), Inches(0.5), size=16, color=ICE)
-    add_card(slide, Inches(8.4), Inches(0.8), Inches(4.0), Inches(5.6), TEAL)
-    add_text(slide, "1990", Inches(8.9), Inches(1.4), Inches(2.0), Inches(0.7),
-             size=34, color=WHITE, bold=True, font_name="Aptos Display")
-    add_text(slide, "Fundação deliberada\npor 24 votos a 2", Inches(8.9), Inches(2.2),
-             Inches(2.4), Inches(0.8), size=18, color=WHITE, bold=True)
-    add_text(slide, "26 Oficiais de Chancelaria reunidos em Brasília decidiram criar uma entidade própria e juridicamente independente.",
-             Inches(8.9), Inches(3.4), Inches(2.6), Inches(1.5), size=16, color=WHITE)
-    add_text(slide, "Mensagem central", Inches(8.9), Inches(5.25), Inches(2.0), Inches(0.3),
+             Inches(0.8), Inches(3.0), Inches(5.0), Inches(0.55), size=17, color=WHITE, bold=True)
+    add_text(slide, "1990  •  26 participantes  •  votação 24 x 2", Inches(0.82), Inches(4.22), Inches(5.6), Inches(0.35),
+             size=15, color=ICE, bold=True)
+    add_card(slide, Inches(8.95), Inches(1.05), Inches(3.15), Inches(4.78), TEAL)
+    add_text(slide, "1990", Inches(9.28), Inches(1.45), Inches(1.2), Inches(0.5),
+             size=28, color=WHITE, bold=True, font_name="Aptos Display")
+    add_text(slide, "Fundação aprovada\npor 24 votos a 2", Inches(9.28), Inches(2.08),
+             Inches(2.18), Inches(0.62), size=15, color=WHITE, bold=True)
+    add_text(slide, "26 Oficiais de Chancelaria, reunidos em Brasília, decidiram criar uma entidade própria e independente.",
+             Inches(9.28), Inches(3.02), Inches(2.18), Inches(1.0), size=13, color=WHITE)
+    add_text(slide, "Mensagem central", Inches(9.28), Inches(4.35), Inches(1.5), Inches(0.22),
              size=11, color=GOLD, bold=True)
-    add_text(slide, "A ASOF une representação institucional e apoio prático ao associado.", Inches(8.9), Inches(5.55),
-             Inches(2.7), Inches(0.7), size=15, color=WHITE, bold=True)
+    add_text(slide, "Representação institucional com apoio prático ao associado.", Inches(9.28), Inches(4.62),
+             Inches(2.18), Inches(0.55), size=13, color=WHITE, bold=True)
     add_footer(slide, 1, total, dark=True)
 
     # 2. Origin timeline
@@ -329,60 +354,100 @@ def build_deck():
              Inches(1.25), Inches(0.6), size=12, color=TEAL, bold=True, align=PP_ALIGN.CENTER)
     add_footer(slide, 10, total, dark=True)
 
-    # 11. Convenios - Educacao
+    # 11. Appendix divider
+    slide = prs.slides.add_slide(blank)
+    add_section_slide(
+        slide,
+        "Apêndice",
+        "Lista completa dos convênios",
+        "Os slides a seguir organizam os parceiros por categoria, com foco em consulta rápida e melhor legibilidade."
+    )
+    add_footer(slide, 11, total, dark=True)
+
+    # 12. Convenios - Educacao
     slide = prs.slides.add_slide(blank)
     set_bg(slide, WHITE)
     body_color = add_title(slide, "Apêndice", "Convênios de educação", dark=False)
-    add_text(slide, "Lista dos parceiros identificados no acervo consultado para a frente de educação.", Inches(0.8), Inches(1.75),
-             Inches(7.0), Inches(0.5), size=17, color=body_color)
-    add_card(slide, Inches(0.85), Inches(2.55), Inches(3.8), Inches(3.8), LIGHT)
-    add_card(slide, Inches(4.85), Inches(2.55), Inches(3.8), Inches(3.8), LIGHT)
-    add_card(slide, Inches(8.85), Inches(2.55), Inches(3.6), Inches(3.8), LIGHT)
-    add_text(slide, "Aliança Francesa\nCCAA\nCIMAN\nColégio Dinatos COC\nCultura Inglesa\nCurso Ignis\nEscola Franciscana Fátima\nEscola Presbiteriana Mackenzie\nFACITEC",
-             Inches(1.1), Inches(2.95), Inches(3.1), Inches(2.9), size=16, color=INK)
-    add_text(slide, "FGV\nGran Cursos\nIBMEC\nIDP\nIESB\nInstituto Blaise Pascal\nLaboro\nMS Educação\nPositive Idiomas",
-             Inches(5.1), Inches(2.95), Inches(3.0), Inches(2.9), size=16, color=INK)
-    add_text(slide, "Rede de Ensino JK\nSt. Giles\nStudio On-line\nSwiss International School\nThomas Jefferson\nUDF\nUniCEUB\nUNIP\nWizard",
-             Inches(9.1), Inches(2.95), Inches(2.9), Inches(2.9), size=16, color=INK)
-    add_footer(slide, 11, total)
-
-    # 12. Convenios - Educacao complementar + Saude
-    slide = prs.slides.add_slide(blank)
-    set_bg(slide, LIGHT)
-    body_color = add_title(slide, "Apêndice", "Convênios de educação complementar e saúde", dark=False)
-    add_text(slide, "Além da lista principal, o acervo contém parceiros complementares em educação e uma frente extensa de saúde.", Inches(0.8), Inches(1.75),
-             Inches(8.0), Inches(0.5), size=17, color=body_color)
-    add_card(slide, Inches(0.85), Inches(2.55), Inches(3.4), Inches(3.9), TEAL)
-    add_text(slide, "Educação complementar", Inches(1.1), Inches(2.9), Inches(2.8), Inches(0.3),
-             size=18, color=WHITE, bold=True)
-    add_text(slide, "Centro Educacional Maria Auxiliadora\nUNYLEYA\nInstituto Formação para a Educação\n3W Educacional Editora e Cursos",
-             Inches(1.1), Inches(3.35), Inches(2.7), Inches(2.2), size=16, color=WHITE)
-    add_card(slide, Inches(4.55), Inches(2.55), Inches(3.8), Inches(3.9), WHITE)
-    add_card(slide, Inches(8.55), Inches(2.55), Inches(3.8), Inches(3.9), WHITE)
-    add_text(slide, "Aquafisio Hidroterapia Esportiva\nBonvena Medicina Reprodutiva\nCBV\nCDI Centro Diagnóstico por Imagem\nCentro de Medicina Nuclear da Guanabara\nCIORB\nClínica Plenus Psicologia e Saúde Integrada\nDermatologic\nEBM-Odonto\nEndogastrus\nHome Hospital Ortopédico e Medicina Especializada\nImplantocard",
-             Inches(4.8), Inches(2.9), Inches(3.1), Inches(3.1), size=14, color=INK)
-    add_text(slide, "Juliana Cristina Paim Psicóloga Clínica e Neuropsicóloga\nLaboratório Citoprev\nMei Li Acupuntura\nOculare Oftalmologia\nOdontobrasília\nOdontoempresa\nRessonance\nRita Trindade\nRM Clínica Médica e Estética\nSabin\nSouli Psicologia e Psicopedagogia",
-             Inches(8.8), Inches(2.9), Inches(3.1), Inches(3.1), size=14, color=INK)
+    add_text(slide, "Parceiros identificados no acervo consultado para a frente de educação.", Inches(0.8), Inches(1.75),
+             Inches(7.0), Inches(0.45), size=17, color=body_color)
+    add_list_panel(slide, "Educação 1", [
+        "Aliança Francesa", "CCAA", "CIMAN", "Colégio Dinatos COC", "Cultura Inglesa",
+        "Curso Ignis", "Escola Franciscana Fátima", "Escola Presbiteriana Mackenzie", "FACITEC"
+    ], Inches(0.85), Inches(2.45), Inches(3.8), Inches(3.9))
+    add_list_panel(slide, "Educação 2", [
+        "FGV", "Gran Cursos", "IBMEC", "IDP", "IESB",
+        "Instituto Blaise Pascal", "Laboro", "MS Educação", "Positive Idiomas"
+    ], Inches(4.85), Inches(2.45), Inches(3.8), Inches(3.9))
+    add_list_panel(slide, "Educação 3", [
+        "Rede de Ensino JK", "St. Giles", "Studio On-line", "Swiss International School",
+        "Thomas Jefferson", "UDF", "UniCEUB", "UNIP", "Wizard"
+    ], Inches(8.85), Inches(2.45), Inches(3.6), Inches(3.9))
+    add_list_panel(slide, "Complementares", [
+        "Centro Educacional Maria Auxiliadora", "UNYLEYA",
+        "Instituto Formação para a Educação", "3W Educacional Editora e Cursos"
+    ], Inches(8.85), Inches(6.55), Inches(3.6), Inches(0.55), fill=TEAL, title_color=WHITE, text_color=WHITE)
     add_footer(slide, 12, total)
 
-    # 13. Convenios - Saude complementar + Lazer
+    # 13. Convenios - Saude parte 1
     slide = prs.slides.add_slide(blank)
-    set_bg(slide, WHITE)
-    body_color = add_title(slide, "Apêndice", "Convênios de saúde complementar e lazer e bem-estar", dark=False)
-    add_card(slide, Inches(0.85), Inches(1.9), Inches(3.2), Inches(4.6), NAVY)
-    add_text(slide, "Saúde complementar", Inches(1.15), Inches(2.25), Inches(2.5), Inches(0.3),
-             size=18, color=WHITE, bold=True)
-    add_text(slide, "Microsom\nOftalmocenter\nImplantomed\nInstituto Oftalmológico Visão\nOlhar Hospital Oftalmológico Ltda.",
-             Inches(1.15), Inches(2.8), Inches(2.35), Inches(2.0), size=16, color=WHITE)
-    add_card(slide, Inches(4.35), Inches(1.9), Inches(3.8), Inches(4.6), LIGHT)
-    add_card(slide, Inches(8.35), Inches(1.9), Inches(4.0), Inches(4.6), LIGHT)
-    add_text(slide, "Academia Club 22\nAcademia Companhia Athletica\nAcademia Dom Bosco\nAcademia Runway\nAcademia Team Nogueira\nAcademia Vasco Neto\nASBAC\nAssociação Cristã de Moços\nATP Atividades Físicas\nBancorbrás Consórcios\nBancorbrás Turismo\nBay Park Resort Hotel",
-             Inches(4.6), Inches(2.25), Inches(3.1), Inches(3.7), size=14, color=INK)
-    add_text(slide, "Camisaria Nyll\nClube dos Previdenciários\nCorpus Studio de Pilates\nElia Spa\nEquilibriom Estética e Podologia\nEscola Ballet Garden\nGrandBittar Hotel\nHotel Fazenda Mestre Darmas\nMontreal Turismo\nNuwa Spa\nStudio Caracóis\nStudio Hair 180 Graus\nThermas do Rio Quente",
-             Inches(8.6), Inches(2.25), Inches(3.2), Inches(3.7), size=14, color=INK)
+    set_bg(slide, LIGHT)
+    body_color = add_title(slide, "Apêndice", "Convênios de saúde", dark=False)
+    add_text(slide, "Primeira parte da frente de saúde, separada para manter leitura confortável em tela.", Inches(0.8), Inches(1.75),
+             Inches(8.2), Inches(0.45), size=17, color=body_color)
+    add_list_panel(slide, "Saúde 1", [
+        "Aquafisio Hidroterapia Esportiva", "Bonvena Medicina Reprodutiva", "CBV",
+        "CDI Centro Diagnóstico por Imagem", "Centro de Medicina Nuclear da Guanabara",
+        "CIORB", "Clínica Plenus Psicologia e Saúde Integrada", "Dermatologic",
+        "EBM-Odonto", "Endogastrus", "Home Hospital Ortopédico e Medicina Especializada"
+    ], Inches(0.85), Inches(2.45), Inches(5.5), Inches(4.35))
+    add_list_panel(slide, "Saúde 2", [
+        "Implantocard", "Juliana Cristina Paim Psicóloga Clínica e Neuropsicóloga",
+        "Laboratório Citoprev", "Mei Li Acupuntura", "Oculare Oftalmologia",
+        "Odontobrasília", "Odontoempresa", "Ressonance",
+        "Rita Trindade", "RM Clínica Médica e Estética", "Sabin", "Souli Psicologia e Psicopedagogia"
+    ], Inches(6.65), Inches(2.45), Inches(5.8), Inches(4.35))
     add_footer(slide, 13, total)
 
-    # 14. Convenios - Servicos
+    # 14. Convenios - Saude complementar
+    slide = prs.slides.add_slide(blank)
+    set_bg(slide, WHITE)
+    body_color = add_title(slide, "Apêndice", "Convênios de saúde complementar", dark=False)
+    add_text(slide, "Parceiros adicionais citados em subpastas e documentação complementar do acervo.", Inches(0.8), Inches(1.75),
+             Inches(7.6), Inches(0.45), size=17, color=body_color)
+    add_list_panel(slide, "Complementares", [
+        "Microsom", "Oftalmocenter", "Implantomed",
+        "Instituto Oftalmológico Visão", "Olhar Hospital Oftalmológico Ltda."
+    ], Inches(0.9), Inches(2.55), Inches(4.0), Inches(2.8), fill=NAVY, title_color=WHITE, text_color=WHITE)
+    add_card(slide, Inches(5.35), Inches(2.55), Inches(6.95), Inches(2.8), TEAL)
+    add_text(slide, "Leitura editorial", Inches(5.65), Inches(2.85), Inches(2.5), Inches(0.25),
+             size=16, color=WHITE, bold=True)
+    add_text(slide, "A frente de saúde é a mais densa do acervo e cobre diagnósticos, clínicas, odontologia, psicologia, oftalmologia e serviços terapêuticos.",
+             Inches(5.65), Inches(3.25), Inches(6.2), Inches(1.35), size=19, color=WHITE, bold=True)
+    add_text(slide, "Na apresentação ao vivo, vale citar poucos exemplos e usar este slide como apoio de consulta, não como leitura integral.", Inches(5.65), Inches(4.7),
+             Inches(5.9), Inches(0.45), size=13, color=ICE)
+    add_footer(slide, 14, total)
+
+    # 15. Convenios - Lazer
+    slide = prs.slides.add_slide(blank)
+    set_bg(slide, LIGHT)
+    body_color = add_title(slide, "Apêndice", "Convênios de lazer e bem-estar", dark=False)
+    add_text(slide, "A categoria reúne atividades físicas, turismo, estética, hotelaria e serviços voltados à qualidade de vida.", Inches(0.8), Inches(1.75),
+             Inches(8.3), Inches(0.45), size=17, color=body_color)
+    add_list_panel(slide, "Lazer e bem-estar 1", [
+        "Academia Club 22", "Academia Companhia Athletica", "Academia Dom Bosco",
+        "Academia Runway", "Academia Team Nogueira", "Academia Vasco Neto",
+        "ASBAC", "Associação Cristã de Moços", "ATP Atividades Físicas",
+        "Bancorbrás Consórcios", "Bancorbrás Turismo", "Bay Park Resort Hotel"
+    ], Inches(0.85), Inches(2.45), Inches(5.6), Inches(4.35))
+    add_list_panel(slide, "Lazer e bem-estar 2", [
+        "Camisaria Nyll", "Clube dos Previdenciários", "Corpus Studio de Pilates",
+        "Elia Spa", "Equilibriom Estética e Podologia", "Escola Ballet Garden",
+        "GrandBittar Hotel", "Hotel Fazenda Mestre Darmas", "Montreal Turismo",
+        "Nuwa Spa", "Studio Caracóis", "Studio Hair 180 Graus", "Thermas do Rio Quente"
+    ], Inches(6.65), Inches(2.45), Inches(5.8), Inches(4.35))
+    add_footer(slide, 15, total)
+
+    # 16. Convenios - Servicos
     slide = prs.slides.add_slide(blank)
     set_bg(slide, NAVY)
     add_title(slide, "Apêndice", "Convênios de serviços", dark=True)
@@ -402,7 +467,7 @@ def build_deck():
                  size=18, color=text_color, bold=True, align=PP_ALIGN.CENTER)
     add_text(slide, "Esses convênios complementam a proposta de valor da ASOF ao conectar representação institucional com utilidade cotidiana.", Inches(1.0), Inches(5.55),
              Inches(11.0), Inches(0.6), size=18, color=ICE, align=PP_ALIGN.CENTER)
-    add_footer(slide, 14, total, dark=True)
+    add_footer(slide, 16, total, dark=True)
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     prs.save(str(OUTPUT_PATH))
