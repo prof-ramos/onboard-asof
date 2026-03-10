@@ -2,3 +2,5 @@
 .omx/
 .omx/logs/
 .omx/state/
+.venv/
+.pptx-preview/

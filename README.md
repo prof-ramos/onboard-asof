@@ -1,22 +1,54 @@
 # ONBOARD ASOF
 
-Material-base para o onboard da ASOF, com foco em apresentar a associação, contextualizar sua origem, explicar como funcionam benefícios e adesão, e organizar os capítulos que já podem ser redigidos a partir da documentação disponível.
+Material-base para apresentar a ASOF a associados atuais e potenciais associados, combinando texto editorial e uma apresentação institucional reutilizável.
+
+## Quick Start
+
+### Ler os capítulos-base
+
+- [fundacao.md](docs/chapters/fundacao.md)
+- [convenio.md](docs/chapters/convenio.md)
+- [formulario.md](docs/chapters/formulario.md)
+- [valores.md](docs/chapters/valores.md)
+
+### Abrir a apresentação pronta
+
+- [onboard-asof.pptx](presentation/onboard-asof.pptx)
+
+### Regenerar a apresentação
+
+```bash
+uv venv .venv
+uv run --with python-pptx scripts/generate_presentation.py
+```
 
 ## Objetivo
 
 Este repositório consolida textos de apoio para um manual de apresentação da ASOF, voltado a associados atuais e potenciais associados. A proposta é transformar documentos institucionais e arquivos operacionais em capítulos claros, reaproveitáveis e fáceis de evoluir.
 
+## Entregáveis
+
+- capítulos editoriais em Markdown sobre fundação, convênios, formulário e contribuição;
+- roteiro estruturado de apresentação em [apresentacao-onboard-asof.md](presentation/apresentacao-onboard-asof.md);
+- deck institucional em [onboard-asof.pptx](presentation/onboard-asof.pptx);
+- script reprodutível de geração em [generate_presentation.py](scripts/generate_presentation.py).
+
 ## Capítulos disponíveis
 
-- [fundacao.md](fundacao.md): origem da ASOF, contexto da reunião de fundação e base estatutária inicial.
-- [convenio.md](convenio.md): visão geral da política de convênios, categorias atendidas e panorama do acervo existente.
-- [formulario.md](formulario.md): explicação do formulário de atualização de dados e instruções de preenchimento.
-- [valores.md](valores.md): contribuição associativa e observações práticas derivadas do formulário disponível.
+- [fundacao.md](docs/chapters/fundacao.md): origem da ASOF, contexto da reunião de fundação e base estatutária inicial.
+- [convenio.md](docs/chapters/convenio.md): visão geral da política de convênios, categorias atendidas e panorama do acervo existente.
+- [formulario.md](docs/chapters/formulario.md): explicação do formulário de atualização de dados e instruções de preenchimento.
+- [valores.md](docs/chapters/valores.md): contribuição associativa e observações práticas derivadas do formulário disponível.
 
-## Capítulos previstos, mas ainda dependentes de fonte complementar
+## Estrutura do repositório
 
-- `conquistas`: ainda não há, neste repositório, um documento-base que liste resultados institucionais, vitórias da carreira ou entregas históricas da ASOF.
-- `comodidades`: parte do conteúdo pode futuramente ser desdobrada de `convenio.md`, mas ainda falta um recorte editorial que diferencie convênios de comodidades permanentes da associação.
+| Arquivo | Finalidade |
+|---------|------------|
+| `README.md` | Visão geral do projeto |
+| `docs/chapters/` | Capítulos editoriais do onboard |
+| `presentation/apresentacao-onboard-asof.md` | Estrutura narrativa do deck |
+| `presentation/onboard-asof.pptx` | Apresentação pronta para uso |
+| `scripts/generate_presentation.py` | Geração automatizada do `.pptx` |
 
 ## Fontes utilizadas nesta etapa
 
@@ -24,6 +56,11 @@ Este repositório consolida textos de apoio para um manual de apresentação da 
 - Estatuto social da ASOF.
 - Formulário de atualização de dados do associado.
 - Acervo em `04-Convenios`, incluindo contratos, minutas e modelo de convênio.
+
+## Conteúdo previsto para evolução
+
+- `conquistas`: ainda não há, neste repositório, um documento-base que liste resultados institucionais, vitórias da carreira ou entregas históricas da ASOF.
+- `comodidades`: parte do conteúdo pode futuramente ser desdobrada de `convenio.md`, mas ainda falta um recorte editorial que diferencie convênios de comodidades permanentes da associação.
 
 ## Observações editoriais
 
